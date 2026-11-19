@@ -1,15 +1,15 @@
 {
-  "version": "0.2.0-beta.1",
-  "build": 375,
-  "date": "2026-11-19T11:00:49Z",
-  "notes": "**工作在远处，掌控在手边。** Pilothouse 让 coding agent 常驻在你的工作机上持续干活，你在 Mac 上用一个原生界面掌控它们。代码仓库和运行环境可以放在工作机上，也可以就留在你的 Mac 上：Agent 在远处思考，文件读写和命令都在本地执行，用你本地的工具链和环境。这是第一个公开发布的测试版。\n\n## 这一版的新内容\n\n- **统一的版本号**：客户端和工作机上的后台服务使用同一个版本号，在「设置 → 通用 → 软件更新」里可以看到各自的版本。\n- **不兼容时明确提示**：工作机的后台服务太旧时，这台机器只能查看、提示必须升级；客户端太旧时，提示先更新客户端。\n- **固定的签名证书**：从这一版开始，安装包都用同一张证书签名，以后更新不需要重新授予屏幕录制、辅助功能、麦克风权限。（从旧测试版换过来，这一次仍需要重新授权。）\n\n## 安装\n\n1. 下载下面的 `Pilothouse-0.2.0-beta.1.dmg`，把 Pilothouse 拖进「应用程序」。\n2. 测试版没有经过 Apple 公证，第一次打开会被系统拦下。在「终端」里运行下面这行，再正常打开：\n   ```bash\n   xattr -dr com.apple.quarantine /Applications/Pilothouse.app\n   ```\n3. 打开 Pilothouse →「设置」→「添加机器」→「通过 SSH 部署…」，填工作机的 SSH 地址，按向导完成。\n4. 在设置里登录模型账号（Claude、ChatGPT 等订阅或 API Key），建一个项目，开始第一个会话。\n\n完整说明和常见问题见附件 `GETTING-STARTED.md`。\n\n## 系统要求\n\n- 客户端：Apple 芯片（M1 及以后）的 Mac，macOS 14 或更新。\n- 工作机：macOS 或 Linux（x86_64 / arm64），能从客户端 SSH 登录。\n\n## 已知限制\n\n- 界面只有中文。\n- 还不能在客户端里自动检查和安装新版本，需要到本页手动下载（后续版本加上）。\n- 不是经 SSH 添加的工作机，暂时没法在客户端里升级后台服务。\n\n## 附件说明\n\n| 文件 | 用途 |\n|---|---|\n| `Pilothouse-0.2.0-beta.1.dmg` | 首次安装 |\n| `Pilothouse-0.2.0-beta.1.zip` | 自动更新用 |\n| `agentd-*.gz` | 工作机后台服务（客户端会自动安装，一般不用手动下载） |\n| `SHA256SUMS`、`SHA256SUMS.sig` | 校验清单及其签名 |\n",
-  "base": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.1",
+  "version": "0.2.0-beta.2",
+  "build": 379,
+  "date": "2026-11-19T12:08:47Z",
+  "notes": "**工作在远处，掌控在手边。** 这一版加上了完整的自动更新。\n\n## 这一版的新内容\n\n- **客户端自动更新**：Pilothouse 会自动检查新版本，有更新时顶栏出现更新按钮，点一下就下载、校验并重启到新版本。下载的安装包会核对校验值和签名证书，不对就不安装。\n- **工作机跟着一起更新**：工作机上的后台服务会更新到和客户端相同的版本。工作机自己从发布页下载；下载不了时由客户端下载后传过去。有会话在跑的机器等会话跑完再更新，不打断 Agent。\n- **升级失败自动回退**：新版本的后台服务启动出错时，会自动换回原来的版本，并在客户端里告诉你。\n- **不再需要 SSH 才能升级**：只要客户端连得上，任何工作机都能在客户端里升级。\n- **更小的安装包**：后台服务不再打包进 App，安装包从约 25MB 减到约 12MB。\n\n## 安装\n\n1. 下载下面的 `Pilothouse-0.2.0-beta.2.dmg`，把 Pilothouse 拖进「应用程序」。\n2. 测试版没有经过 Apple 公证，第一次打开会被系统拦下。在「终端」里运行下面这行，再正常打开：\n   ```bash\n   xattr -dr com.apple.quarantine /Applications/Pilothouse.app\n   ```\n3. 打开 Pilothouse →「设置」→「添加机器」→「通过 SSH 部署…」，填工作机的 SSH 地址，按向导完成。\n\n从这一版开始，以后的版本都可以在 App 里直接更新。完整说明见附件 `GETTING-STARTED.md`。\n\n## 已知限制\n\n- 界面只有中文。\n- 0.2.0-beta.1 还不会自动更新，需要手动下载这一版安装一次。\n- 0.2.0-beta.1 以前装的工作机，第一次要经 SSH 升级（在设置里点「升级…」）；之后就可以直接在客户端里升级。\n",
+  "base": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.2",
   "critical": false,
   "min_client": null,
   "min_agentd": null,
   "client": {
-    "url": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.1/Pilothouse-0.2.0-beta.1.zip",
-    "sha256": "32b39ca243294983e28a3a869e55076f762a4d5d0b32a219d147a670ddc068b8",
-    "size": 23037097
+    "url": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.2/Pilothouse-0.2.0-beta.2.zip",
+    "sha256": "6ce08c98d808d5c0e6636511edd7845d31c07d4b76445e6ce9c7322c3e5f14fb",
+    "size": 4388284
   }
 }
