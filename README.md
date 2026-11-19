@@ -1,9 +1,4 @@
-<p>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/mark-dark.svg">
-    <img src="assets/mark-light.svg" width="72" height="72" alt="Pilothouse">
-  </picture>
-</p>
+<p><img src="assets/app-icon.png" width="96" height="96" alt="Pilothouse"></p>
 
 # Pilothouse
 
