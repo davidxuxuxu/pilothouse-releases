@@ -1,15 +1,15 @@
 {
-  "version": "0.2.0-beta.3",
-  "build": 386,
-  "date": "2026-11-19T18:32:16Z",
-  "notes": "功能与 0.2.0-beta.2 相同。这一版用来验证从 0.2.0-beta.2 在 App 里直接更新的流程：客户端自动下载、校验并重启，工作机上的后台服务跟着更新到同一版本。\n\n已经装了 0.2.0-beta.2 的，在 App 菜单「检查更新…」里就能看到这一版；还没装的，下载下面的 `Pilothouse-0.2.0-beta.3.dmg` 安装即可（首次打开前在终端运行 `xattr -dr com.apple.quarantine /Applications/Pilothouse.app`）。\n",
-  "base": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.3",
+  "version": "0.2.0-beta.4",
+  "build": 409,
+  "date": "2026-11-19T20:22:46Z",
+  "notes": "这一版主要是账号和设置页的调整：\n\n- **账号按身份识别、合并**：登录时识别是哪个账号（Claude、ChatGPT、xAI 订阅识别账号，API Key 按指纹区分）。同一个账号登录在几个位置时只显示一行，位置用小标签显示，鼠标放上去展开；不同账号即使是同一家也分开显示。\n- **设置分成「通用」「账号」「位置」三页**，界面用词统一成对话、模型、账号、项目、位置。\n- 登录订阅时可以选择登录到哪个位置。\n- 后台任务的结果在对话里显示成可以折叠的卡片；侧栏状态颜色更克制。\n\n已经装了旧版本的，在 App 菜单「检查更新…」里就能更新，运行 Agent 的位置也会提示更新到同一版本。\n",
+  "base": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.4",
   "critical": false,
   "min_client": null,
   "min_agentd": null,
   "client": {
-    "url": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.3/Pilothouse-0.2.0-beta.3.zip",
-    "sha256": "c1cab6d91ec57c68a7b443c5162e6ce2030551cda52edd7e100cc423750d0cc3",
-    "size": 4389518
+    "url": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.4/Pilothouse-0.2.0-beta.4.zip",
+    "sha256": "306a91bb4b82d3dac4471090b90c6cd3ed5270144ecc50d3c4caec15fb0f9d6d",
+    "size": 4544055
   }
 }
