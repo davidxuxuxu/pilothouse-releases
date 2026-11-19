@@ -2,7 +2,7 @@
   "version": "0.2.0-beta.1",
   "build": 375,
   "date": "2026-11-19T11:00:49Z",
-  "notes": "第一个公开发布的测试版。\n\n- 客户端和工作机后台服务（agentd）统一使用同一个版本号，设置 →「软件更新」里可以看到。\n- 客户端和后台服务版本不兼容时会明确提示：后台服务太旧时这台机器只能查看、需要升级；客户端太旧时提示先更新客户端。\n- 安装包改用固定的签名证书，以后更新不需要重新授予屏幕录制、辅助功能和麦克风权限（从这一版开始生效）。\n\n首次安装：下载 `Pilothouse-0.2.0-beta.1.dmg`，拖进「应用程序」。详细步骤见 `GETTING-STARTED.md`。\n",
+  "notes": "**工作在远处，掌控在手边。** Pilothouse 让 coding agent 常驻在你的工作机上持续干活，你在 Mac 上用一个原生界面掌控它们。这是第一个公开发布的测试版。\n\n## 这一版的新内容\n\n- **统一的版本号**：客户端和工作机上的后台服务使用同一个版本号，在「设置 → 通用 → 软件更新」里可以看到各自的版本。\n- **不兼容时明确提示**：工作机的后台服务太旧时，这台机器只能查看、提示必须升级；客户端太旧时，提示先更新客户端。\n- **固定的签名证书**：从这一版开始，安装包都用同一张证书签名，以后更新不需要重新授予屏幕录制、辅助功能、麦克风权限。（从旧测试版换过来，这一次仍需要重新授权。）\n\n## 安装\n\n1. 下载下面的 `Pilothouse-0.2.0-beta.1.dmg`，把 Pilothouse 拖进「应用程序」。\n2. 测试版没有经过 Apple 公证，第一次打开会被系统拦下。在「终端」里运行下面这行，再正常打开：\n   ```bash\n   xattr -dr com.apple.quarantine /Applications/Pilothouse.app\n   ```\n3. 打开 Pilothouse →「设置」→「添加机器」→「通过 SSH 部署…」，填工作机的 SSH 地址，按向导完成。\n4. 在设置里登录模型账号（Claude、ChatGPT 等订阅或 API Key），建一个项目，开始第一个会话。\n\n完整说明和常见问题见附件 `GETTING-STARTED.md`。\n\n## 系统要求\n\n- 客户端：Apple 芯片（M1 及以后）的 Mac，macOS 14 或更新。\n- 工作机：macOS 或 Linux（x86_64 / arm64），能从客户端 SSH 登录。\n\n## 已知限制\n\n- 界面只有中文。\n- 还不能在客户端里自动检查和安装新版本，需要到本页手动下载（后续版本加上）。\n- 不是经 SSH 添加的工作机，暂时没法在客户端里升级后台服务。\n\n## 附件说明\n\n| 文件 | 用途 |\n|---|---|\n| `Pilothouse-0.2.0-beta.1.dmg` | 首次安装 |\n| `Pilothouse-0.2.0-beta.1.zip` | 自动更新用 |\n| `agentd-*.gz` | 工作机后台服务（客户端会自动安装，一般不用手动下载） |\n| `SHA256SUMS`、`SHA256SUMS.sig` | 校验清单及其签名 |\n",
   "base": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.1",
   "critical": false,
   "min_client": null,
