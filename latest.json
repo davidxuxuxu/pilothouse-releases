@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0-beta.1",
+  "build": 375,
+  "date": "2026-11-19T11:00:49Z",
+  "notes": "第一个公开发布的测试版。\n\n- 客户端和工作机后台服务（agentd）统一使用同一个版本号，设置 →「软件更新」里可以看到。\n- 客户端和后台服务版本不兼容时会明确提示：后台服务太旧时这台机器只能查看、需要升级；客户端太旧时提示先更新客户端。\n- 安装包改用固定的签名证书，以后更新不需要重新授予屏幕录制、辅助功能和麦克风权限（从这一版开始生效）。\n\n首次安装：下载 `Pilothouse-0.2.0-beta.1.dmg`，拖进「应用程序」。详细步骤见 `GETTING-STARTED.md`。\n",
+  "base": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.1",
+  "critical": false,
+  "min_client": null,
+  "min_agentd": null,
+  "client": {
+    "url": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.1/Pilothouse-0.2.0-beta.1.zip",
+    "sha256": "32b39ca243294983e28a3a869e55076f762a4d5d0b32a219d147a670ddc068b8",
+    "size": 23037097
+  }
+}
