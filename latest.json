@@ -1,15 +1,15 @@
 {
-  "version": "0.2.0-beta.5",
-  "build": 437,
-  "date": "2026-11-20T17:53:09Z",
-  "notes": "这一版主要修了运行 Agent 的位置上磁盘读写过多的问题，并改进了新装时的引导：\n\n- **重连不再大量写盘**：以前客户端每次连上 Agent，Agent 都要把全部历史事件排一遍序，事件多了以后每次会写约 100MB 临时文件，频繁重连时可能触发 macOS 的磁盘写入报告。现在每次连上只要约 1 毫秒，不再写盘。\n- **会话日志瘦身**：Agent 的会话日志不再重复保存截图数据。已有日志会在 Agent 升级后第一次启动时自动瘦身一次，截图多的会话可以小到原来的四分之一左右。\n- **修复会话反复重新下载**：Agent 重启后，个别会话可能被客户端反复整份重新下载，现在不会了。\n- **在这台 Mac 上运行 Agent**：设置 →「位置」→「这台 Mac」可以直接在本机运行 Agent、登录账号。\n- **新装引导**：还没有位置或账号时，对话页和模型菜单会直接给出「添加位置」/「添加账号」按钮。\n- Agent 重启后客户端会自己重新连上；发送失败的消息旁边有「重试」按钮。\n- 侧栏可以折叠（⌃⌘S），搜索按钮挪到折叠按钮旁边；连接中的信号图标改成扫描动画；设置页细节调整，「软件更新」改名为「关于」。\n\n已经装了旧版本的，在 App 菜单「检查更新…」里就能更新，运行 Agent 的位置也会提示更新到同一版本。\n",
-  "base": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.5",
+  "version": "0.2.0-beta.6",
+  "build": 464,
+  "date": "2026-11-21T12:25:58Z",
+  "notes": "这一版主要降低了客户端的 CPU 占用，修了 Agent 偶尔整体卡住的问题，并改进了输入框：\n\n- **客户端更省电**：会话运行时的加载动画、进度条、光标等改用系统动画层播放，以前只要有会话在跑就要占大半个 CPU 核，现在几乎不占。用完「操作这台 Mac」后客户端不再一直占着 CPU。\n- **修复 Agent 偶尔整体卡住**：以前有时所有会话一起卡几十秒到几分钟再一起恢复；超长会话的历史也不会再把主机内存撑爆。\n- **传图更快**：客户端发给 Agent 的数据也压缩了；粘贴的截图和图片附件会自动缩到 2000 像素、合适时转成 JPEG。\n- **输入框**：\n  - 输入框为空时按 ↑/↓ 可以翻之前发过的消息，最近 5 条连附件一起找回。\n  - 中文/日文输入法选词时按回车不会再把消息发出去。\n  - 长文本输入时输入框不再上下跳。\n- **会话之间的消息**：其他会话发来的消息显示成单独的卡片，长的默认折叠，点来源可以跳过去。\n- **侧栏底部状态**：总会显示一行状态（主机休眠、额度用完、运行中/未读/等你回复的会话数），鼠标移上去能看到列表并跳转。\n- 压缩上下文后，上下文用量会马上更新。\n- 「位置」改叫「主机」；设置里有更新时只显示一个小红点。\n\n已经装了旧版本的，在 App 菜单「检查更新…」里就能更新，运行 Agent 的主机也会提示更新到同一版本。\n",
+  "base": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.6",
   "critical": false,
   "min_client": null,
   "min_agentd": null,
   "client": {
-    "url": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.5/Pilothouse-0.2.0-beta.5.zip",
-    "sha256": "986a6fdce1d17552e6a042d827e355a87f5ff493096d99a9dd73f6e9da78f796",
-    "size": 4629088
+    "url": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.6/Pilothouse-0.2.0-beta.6.zip",
+    "sha256": "d0bf397c64bcb1754bfed8be8e4a0b0819246fe6b153e4340b68d88b88bee869",
+    "size": 4727459
   }
 }
