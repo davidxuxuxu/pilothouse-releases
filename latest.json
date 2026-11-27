@@ -1,15 +1,15 @@
 {
-  "version": "0.2.0-beta.11",
-  "build": 730,
-  "date": "2026-11-26T22:31:12Z",
-  "notes": "**你合上电脑，工作继续向前。** Pilothouse 是为 coding agent 准备的原生 macOS App：Agent 常驻在你的主机上持续干活，你在 Mac 上管理多台主机、多个项目和所有对话。关掉 App、Mac 休眠、换网络，都不会打断正在做的事，回来就能接着看。\n\n官网：https://pilothouse.fanhousanbu.workers.dev\n\n## 它能做什么\n\n- **随时接管**：运行中可以排队或插话，按 Esc 随时停止；每一轮改了哪些文件、diff 是什么都看得到，不满意可以一键撤销这一轮。\n- **几件事同时做**：每个对话可以开一个独立工作区，在自己的分支上改代码，做完一键合并回主分支。\n- **你的订阅，你的模型**：登录 Claude、ChatGPT、xAI 等订阅，或填写 API Key，随时切换模型和思考强度。\n- **角色与子对话**：把评审、测试、调研写成角色，输入 @ 派活，也可以开子对话并行处理。\n- **定时任务、全文搜索（⌘K）、Mac 通知、浅色与深色**，还有桌角的小灯：Agent 在忙它就亮着，有对话等你决定它会叫你。\n\n## 安装\n\n1. 下载下面的 `Pilothouse-0.2.0-beta.11.dmg`，把 Pilothouse 拖进「应用程序」。\n2. 测试版没有经过 Apple 公证，第一次打开会被系统拦下。在「终端」里运行下面这行，再正常打开：\n   ```bash\n   xattr -dr com.apple.quarantine /Applications/Pilothouse.app\n   ```\n3. 打开就能直接用这台 Mac。要用别的机器当主机：「设置」→「主机」→「添加主机」，填 SSH 地址，向导会自动安装和配对。\n4. 在「设置」→「模型服务」里登录订阅或填写 API Key，选一个项目，开始第一个对话。\n\n完整说明和常见问题见附件 `GETTING-STARTED.md`。\n\n## 系统要求\n\n- App：Apple 芯片（M1 及以后）的 Mac，macOS 14 或更新。暂不支持 Intel Mac。\n- 主机：macOS 或 Linux（x86_64 / arm64）；远程主机要能从这台 Mac 用 SSH 登录。\n\n## 已知限制\n\n- 界面只有中文。\n- 测试版没有经过 Apple 公证，首次打开需要按上面第 2 步操作。\n\n已经装了旧测试版的，在 App 菜单「检查更新…」里更新；连上主机后，按提示把主机上的 Agent 服务也更新到这一版。\n",
-  "base": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.11",
+  "version": "0.2.0-beta.12",
+  "build": 743,
+  "date": "2026-11-27T12:04:50Z",
+  "notes": "**你合上电脑，工作继续向前。** Pilothouse 是为 coding agent 准备的原生 macOS App：Agent 常驻在你的主机上持续干活，你在 Mac 上管理多台主机、多个项目和所有对话。关掉 App、Mac 休眠、换网络，都不会打断正在做的事，回来就能接着看。\n\n官网：https://pilothouse.fanhousanbu.workers.dev\n\n## 它能做什么\n\n- **随时接管**：运行中可以排队或插话，按 Esc 随时停止；每一轮改了哪些文件、diff 是什么都看得到，不满意可以一键撤销这一轮。\n- **几件事同时做**：每个对话可以开一个独立工作区，在自己的分支上改代码，做完一键合并回主分支。\n- **你的订阅，你的模型**：登录 Claude、ChatGPT、xAI 等订阅，或填写 API Key，随时切换模型和思考强度。\n- **角色与子对话**：把评审、测试、调研写成角色，输入 @ 派活，也可以开子对话并行处理。\n- **定时任务、全文搜索（⌘K）、Mac 通知、浅色与深色**，还有桌角的小灯：Agent 在忙它就亮着，有对话等你决定它会叫你。\n- **中文和英文界面**：在「设置」→「通用」→「语言」里切换。\n\n## 这一版的变化\n\n- 「设置」新增「关于」页：一张软件更新状态卡，告诉你是否都已是最新；有更新时列出这台 Mac 和哪些主机要更新，点「立即更新」一次全部更新。各组件版本收在「版本详情」里。\n- 「设置」新增「隐私」页：控制这台 Mac 的屏幕、让主机经 SSH 访问这台 Mac 这两项权限移到这里，并写明 Pilothouse 的隐私做法：不做统计、追踪和崩溃上报，没有自己的服务器，对话和代码留在你的主机上。\n- 「关于」页加入致谢：对话里的 Agent 基于开源项目 pi。\n\n## 安装\n\n1. 下载下面的 `Pilothouse-0.2.0-beta.12.dmg`，把 Pilothouse 拖进「应用程序」。\n2. 测试版没有经过 Apple 公证，第一次打开会被系统拦下。在「终端」里运行下面这行，再正常打开：\n   ```bash\n   xattr -dr com.apple.quarantine /Applications/Pilothouse.app\n   ```\n3. 打开就能直接用这台 Mac。要用别的机器当主机：「设置」→「主机」→「添加主机」，填 SSH 地址，向导会自动安装和配对。\n4. 在「设置」→「模型服务」里登录订阅或填写 API Key，选一个项目，开始第一个对话。\n\n完整说明和常见问题见附件 `GETTING-STARTED.md`。\n\n## 系统要求\n\n- App：Apple 芯片（M1 及以后）的 Mac，macOS 14 或更新。暂不支持 Intel Mac。\n- 主机：macOS 或 Linux（x86_64 / arm64）；远程主机要能从这台 Mac 用 SSH 登录。\n\n## 已知限制\n\n- 测试版没有经过 Apple 公证，首次打开需要按上面第 2 步操作。\n\n已经装了旧测试版的，在 App 菜单「检查更新…」里更新；连上主机后，按提示把主机上的 Agent 服务也更新到这一版。\n",
+  "base": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.12",
   "critical": false,
   "min_client": null,
   "min_agentd": null,
   "client": {
-    "url": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.11/Pilothouse-0.2.0-beta.11.zip",
-    "sha256": "781f044f71b6ebf1b1a6c22b61dd16d5d6395acecea34950500de5be1d94e29a",
-    "size": 6242958
+    "url": "https://github.com/davidxuxuxu/pilothouse-releases/releases/download/v0.2.0-beta.12/Pilothouse-0.2.0-beta.12.zip",
+    "sha256": "660b1afc6cdb407db565bb1334996168241e6e68c388acf542d68c028f125100",
+    "size": 6484545
   }
 }
